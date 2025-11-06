@@ -1,10 +1,12 @@
 # Cursor Rules for SvelteKit Project
 
 ## Package Manager
+
 - Always use `bun` instead of `npm` or `yarn` for package management and script execution
 - Use `bun install`, `bun run <script>`, `bun add <package>`, etc.
 
 ## Tech Stack
+
 - **Framework**: SvelteKit 2.x with Svelte 5
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
@@ -13,6 +15,7 @@
 - **Build Tool**: Vite
 
 ## Svelte 5 Conventions
+
 - Use Svelte 5 runes (`$state`, `$derived`, `$effect`, `$props`) instead of the Options API
 - Prefer runes over reactive statements (`$:`) when possible
 - Use `$props()` for component props with proper TypeScript typing
@@ -21,6 +24,7 @@
 - Use `$effect()` for side effects
 
 ## Code Style
+
 - Follow Prettier formatting (already configured)
 - Use ESLint rules (already configured)
 - Use TypeScript strict mode
@@ -28,6 +32,7 @@
 - Use async/await over promises when appropriate
 
 ## File Organization
+
 - Components in `src/lib/` directory
 - Routes in `src/routes/` directory (SvelteKit conventions)
 - Stories in `src/stories/` directory
@@ -35,36 +40,41 @@
 - E2E tests in `e2e/` directory
 
 ## Testing
+
 - Write unit tests with Vitest for components and utilities
 - Write e2e tests with Playwright for user flows
 - Use `*.spec.ts` naming convention for test files
 - Test files should be co-located with source files when possible
 
 ## Component Development
+
 - Create Storybook stories for reusable components
 - Use Storybook for component development and documentation
 - Follow accessibility best practices (a11y addon is configured)
 
 ## Styling
+
 - Use Tailwind CSS utility classes for styling
 - Use Tailwind CSS v4 syntax and features
 - Prefer Tailwind classes over custom CSS when possible
 - Use CSS custom properties for theme values when needed
 
 ## TypeScript
+
 - Use strict TypeScript typing
 - Avoid `any` types - use proper types or `unknown`
 - Use type inference when types are obvious
 - Export types/interfaces when they're used across files
 
 ## Git
+
 - Write clear, descriptive commit messages
 - Follow conventional commit format when appropriate
 
 ## General Guidelines
+
 - Keep components small and focused
 - Extract reusable logic into utility functions
 - Use SvelteKit's built-in features (load functions, form actions, etc.)
 - Follow SvelteKit routing conventions
 - Optimize for performance and accessibility
-

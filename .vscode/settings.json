@@ -1,4 +1,9 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"css.lint.unknownAtRules": "ignore",
+	"css.customData": [".vscode/css-custom-data.json"],
+	"tailwindCSS.includeLanguages": {
+		"svelte": "html"
+	}
 }

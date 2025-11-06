@@ -19,7 +19,7 @@
 						<img
 							src={product.image}
 							alt={product.name}
-							class="w-full h-48 object-cover"
+							class="w-full h-48 object-contain bg-gray-50"
 						/>
 					{:else}
 						<div class="w-full h-48 bg-gray-200 flex items-center justify-center">

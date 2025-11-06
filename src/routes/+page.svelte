@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { products } from '$lib/data/products.js';
 	import { basketStore } from '$lib/stores/basket.js';
+	import { withBase } from '$lib/utils/paths.js';
+	import { base } from '$app/paths';
 	import type { Product } from '$lib/types/product.js';
 
 	function addToBasket(product: Product) {
@@ -14,10 +16,10 @@
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 		{#each products as product}
 			<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-				<a href="/products/{product.id}">
+				<a href={`${base}/products/${product.id}`}>
 					{#if product.image}
 						<img
-							src={product.image}
+							src={withBase(product.image)}
 							alt={product.name}
 							class="w-full h-48 object-contain bg-gray-50"
 						/>

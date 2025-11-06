@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { basketStore } from '$lib/stores/basket.js';
+	import { withBase } from '$lib/utils/paths.js';
+	import { base } from '$app/paths';
 	import type { Product } from '$lib/types/product.js';
 
 	let { data }: { data: { product: Product; relatedProducts: Product[] } } = $props();
@@ -25,9 +27,9 @@
 <div class="container mx-auto px-4 py-8 max-w-6xl">
 	<!-- Breadcrumb -->
 	<nav class="mb-6 text-sm">
-		<a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+		<a href={base || '/'} class="text-gray-600 hover:text-gray-900">Home</a>
 		<span class="mx-2 text-gray-400">/</span>
-		<a href="/" class="text-gray-600 hover:text-gray-900">Products</a>
+		<a href={base || '/'} class="text-gray-600 hover:text-gray-900">Products</a>
 		<span class="mx-2 text-gray-400">/</span>
 		<span class="text-gray-900">{data.product.name}</span>
 	</nav>
@@ -37,7 +39,7 @@
 		<div class="bg-white rounded-lg overflow-hidden">
 			{#if data.product.image}
 				<img
-					src={data.product.image}
+					src={withBase(data.product.image)}
 					alt={data.product.name}
 					class="w-full h-auto object-cover"
 				/>
@@ -172,12 +174,12 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 				{#each data.relatedProducts as relatedProduct}
 					<a
-						href="/products/{relatedProduct.id}"
+						href={`${base}/products/${relatedProduct.id}`}
 						class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
 					>
 						{#if relatedProduct.image}
 							<img
-								src={relatedProduct.image}
+								src={withBase(relatedProduct.image)}
 								alt={relatedProduct.name}
 								class="w-full h-48 object-contain bg-gray-50"
 							/>

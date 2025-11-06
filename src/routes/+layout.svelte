@@ -2,6 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import { basketItemCount } from '$lib/stores/basket.js';
+	import { base } from '$app/paths';
 
 	let { children } = $props();
 </script>
@@ -13,19 +14,19 @@
 <nav class="bg-white shadow-md">
 	<div class="container mx-auto px-4 py-4">
 		<div class="flex items-center justify-between">
-			<a href="/" class="text-2xl font-bold text-green-600 hover:text-green-700">
+			<a href={base || '/'} class="text-2xl font-bold text-green-600 hover:text-green-700">
 				Olive Oil Shop
 			</a>
 
 			<div class="flex items-center gap-6">
 				<a
-					href="/"
+					href={base || '/'}
 					class="text-gray-700 hover:text-gray-900 font-medium transition-colors"
 				>
 					Products
 				</a>
 				<a
-					href="/basket"
+					href={`${base}/basket`}
 					class="relative text-gray-700 hover:text-gray-900 font-medium transition-colors"
 				>
 					Basket

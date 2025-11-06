@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { basketStore, basketTotal } from '$lib/stores/basket.js';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	let customerName = $state('');
 	let customerEmail = $state('');
@@ -38,7 +39,7 @@
 			// Clear basket after successful order
 			setTimeout(() => {
 				basketStore.clear();
-				goto('/');
+				goto(base || '/');
 			}, 3000);
 		}, 1000);
 	}
@@ -76,7 +77,7 @@
 			<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
 				<p class="text-yellow-800">Your basket is empty. Please add some products first.</p>
 				<a
-					href="/"
+					href={base || '/'}
 					class="inline-block mt-4 text-green-600 hover:text-green-700 font-semibold"
 				>
 					Continue Shopping →
@@ -157,7 +158,7 @@
 
 				<div class="flex gap-4 pt-4">
 					<a
-						href="/basket"
+						href={`${base}/basket`}
 						class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold py-3 px-6 rounded-lg text-center transition-colors"
 					>
 						Back to Basket

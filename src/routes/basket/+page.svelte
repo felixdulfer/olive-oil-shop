@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { basketStore, basketTotal } from '$lib/stores/basket.js';
+	import { base } from '$app/paths';
 
 	function updateQuantity(productId: string, quantity: number) {
 		basketStore.updateQuantity(productId, quantity);
@@ -17,7 +18,7 @@
 		<div class="py-12 text-center">
 			<p class="mb-4 text-lg text-gray-600">Your basket is empty</p>
 			<a
-				href="/"
+				href={base || '/'}
 				class="inline-block rounded-lg bg-green-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-green-700"
 			>
 				Continue Shopping
@@ -75,13 +76,13 @@
 
 				<div class="flex gap-4">
 					<a
-						href="/"
+						href={base || '/'}
 						class="flex-1 rounded-lg bg-gray-200 px-6 py-3 text-center font-semibold text-gray-900 transition-colors hover:bg-gray-300"
 					>
 						Continue Shopping
 					</a>
 					<a
-						href="/order"
+						href={`${base}/order`}
 						class="flex-1 rounded-lg bg-green-600 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-green-700"
 					>
 						Proceed to Order
